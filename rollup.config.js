@@ -6,6 +6,8 @@ import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import css from 'rollup-plugin-css-only';
 import sveltePreprocess from 'svelte-preprocess';
+import tailwindcss from 'tailwindcss';
+import autoprefixer from 'autoprefixer';
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -52,7 +54,7 @@ export default {
       preprocess: sveltePreprocess({
         sourceMap: !production,
         postcss: {
-          plugins: [require('tailwindcss')(), require('autoprefixer')()],
+          plugins: [tailwindcss(), autoprefixer()],
         },
       }),
     }),
