@@ -3,7 +3,8 @@
 </script>
 
 <section class={classes}>
-  <div class="container p-8 mx-auto">
-    <slot />
+  <div class="container p-8 pt-12 mx-auto">
+    <slot name="content" />
   </div>
+  <slot name="divider" />
 </section>
